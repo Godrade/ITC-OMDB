@@ -13,5 +13,7 @@ class PagesController extends Controller {
         return view('app.pages.index');
     }
 
-    public function search() {}
+    public function search() {
+
+    }
 }
