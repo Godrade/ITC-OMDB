@@ -72,6 +72,15 @@
                         <li><span class="fiche-info-title">Box Office</span> {{ $media['BoxOffice'] }} </li>@endif
                 </ul>
 
+                <ul class="list-unstyled fiche-ul">
+                    @if(!empty($media['totalSeasons']))
+                        <li><span class="fiche-info-title">Total Seasons</span> {{ $media['totalSeasons'] }} </li>@endif
+                        @if(!empty($media['Rated']))
+                            <li><span class="fiche-info-title">Rated</span> {{ $media['Rated'] }} </li>@endif
+                        @if(!empty($media['Released']))
+                            <li><span class="fiche-info-title">Released</span> {{ $media['Released'] }} </li>@endif
+                </ul>
+
             </div>
         </section>
     </main>

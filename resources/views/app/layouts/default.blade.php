@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - {{ ENV('APP_NAME') }}</title>
-    @yield('metaHead')
+@yield('metaHead')
 
-    <!-- Google / Search Engine Tags -->
+<!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="{{ ENV('APP_NAME') }}">
     <meta itemprop="description"
           content="Mon Commerçant Corse, est une plateforme de référencement de nos Commerçants/Artisans/Producteurs de Corse.">
@@ -52,12 +52,16 @@
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 
     @yield('scriptHeader')
 
 </head>
 <body>
 @include('app.components.header')
+@include('app.components.message')
 @yield('content')
 
 @yield('scriptFooter')

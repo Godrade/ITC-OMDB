@@ -16,7 +16,7 @@
                     <span class="text-white mb-2">Number of results : {{ $mediaListed['movie']['totalResults'] }}</span>
                     @foreach($mediaListed['movie']['Search'] as $movie)
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 position-relative">
-                            <a href="{{ route('app.fiche', ['type' => $movie['Type'], 'imdbID' => $movie['imdbID']]) }}"
+                            <a href="{{ route('app.fiche', ['type' => $movie['Type'], 'omdbID' => $movie['imdbID']]) }}"
                                class="media-container">
                                 <img
                                     src="{{ $movie['Poster'] != 'N/A' ? $movie['Poster'] : asset('assets/images/default-picture.jpg') }}"
@@ -38,7 +38,7 @@
                         class="text-white mb-2">Number of results : {{ $mediaListed['series']['totalResults'] }}</span>
                     @foreach($mediaListed['series']['Search'] as $serie)
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 position-relative">
-                            <a href="{{ route('app.fiche', ['type' => $serie['Type'], 'imdbID' => $serie['imdbID']]) }}"
+                            <a href="{{ route('app.fiche', ['type' => $serie['Type'], 'omdbID' => $serie['imdbID']]) }}"
                                class="media-container">
                                 <img
                                     src="{{ $serie['Poster'] != 'N/A' ? $serie['Poster'] : asset('assets/images/default-picture.jpg') }}"
@@ -55,14 +55,12 @@
                 <div class="col-12">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            <li class="page-item {{ $pagination['previousIndex'] == 1 ? 'disabled': ''  }}">
+                                <a class="page-link" href="{{ route('app.search', ['omdbName' => $pagination['mediaData']['omdbName'], 'pageID' => $pagination['previousIndex']]) }}" tabindex="-1" aria-disabled="false">Previous</a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">{{ $pagination['previousIndex'] }}</a></li>
-                            <li class="page-item"><a class="page-link" href="#">{{ $pagination['index'] }}</a></li>
-                            <li class="page-item"><a class="page-link" href="#">{{ $pagination['nextIndex'] }}</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
+                            <li class="page-item"><a class="page-link disabled" href="#">{{ $pagination['index'] }}</a></li>
+                            <li class="page-item {{ $pagination['nextIndex'] == 1 ? 'disabled': ''  }}">
+                                <a class="page-link" href="{{ route('app.search', ['omdbName' => $pagination['mediaData']['omdbName'], 'pageID' => $pagination['nextIndex']]) }}">Next</a>
                             </li>
                         </ul>
                     </nav>
