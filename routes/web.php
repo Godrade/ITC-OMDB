@@ -17,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['ForceSSL']], function () {
     Route::get('/', [PagesController::class, 'index'])->name('app.index');
     Route::post('/search/', [PagesController::class, 'search'])->name('app.search');
+    //Route::get('/search/', [PagesController::class, 'search2'])->name('app.search');
+    Route::get('/{type}/{imdbID}', [PagesController::class, 'fiche'])->name('app.fiche');
+
 });

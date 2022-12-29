@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-6">
                     <h1 class="h1 text-white mb-3">Page Expired</h1>
-                    <a href="{{ url(route('app.index'))->previous() }}" class="btn btn-light">Back to home</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-light">Back to home</a>
                 </div>
             </div>
         </section>
