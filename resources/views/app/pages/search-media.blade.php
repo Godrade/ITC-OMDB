@@ -9,11 +9,11 @@
     <main>
         <section class="container mt-5 mb-5">
             <div class="row">
-                <h3 class="h3 text-white mb-0">Movie(s)</h3>
+                <h3 class="h3 mb-0">Movie(s)</h3>
                 @if(!empty($mediaListed['movie']['Error']))
-                    <span class="text-white">{{ $mediaListed['movie']['Error'] }}</span>
+                    <span>{{ $mediaListed['movie']['Error'] }}</span>
                 @else
-                    <span class="text-white mb-2">Number of results : {{ $mediaListed['movie']['totalResults'] }}</span>
+                    <span class="mb-2">Number of results : {{ $mediaListed['movie']['totalResults'] }}</span>
                     @foreach($mediaListed['movie']['Search'] as $movie)
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 position-relative">
                             <a href="{{ route('app.fiche', ['type' => $movie['Type'], 'omdbID' => $movie['imdbID']]) }}"
@@ -30,12 +30,12 @@
                 @endif
             </div>
             <div class="row mt-5 mb-3">
-                <h3 class="h3 text-white mb-0">Serie(s)</h3>
+                <h3 class="h3 mb-0">Serie(s)</h3>
                 @if(!empty($mediaListed['series']['Error']))
-                    <span class="text-white">{{ $mediaListed['series']['Error'] }}</span>
+                    <span>{{ $mediaListed['series']['Error'] }}</span>
                 @else
                     <span
-                        class="text-white mb-2">Number of results : {{ $mediaListed['series']['totalResults'] }}</span>
+                        class="mb-2">Number of results : {{ $mediaListed['series']['totalResults'] }}</span>
                     @foreach($mediaListed['series']['Search'] as $serie)
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 position-relative">
                             <a href="{{ route('app.fiche', ['type' => $serie['Type'], 'omdbID' => $serie['imdbID']]) }}"

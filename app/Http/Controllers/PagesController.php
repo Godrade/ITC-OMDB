@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 
@@ -51,7 +50,6 @@ class PagesController extends Controller {
             );
 
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return redirect()->route('app.index')->withErrors('An error has occurred!');
         }
 

@@ -64,12 +64,6 @@
                         <li><span class="fiche-info-title">Language</span> {{ $media['Language'] }}</li>@endif
                     @if(!empty($media['Country']))
                         <li><span class="fiche-info-title">Country</span> {{ $media['Country'] }}</li>@endif
-                    @if(!empty($media['Awards']))
-                        <li><span class="fiche-info-title">Awards</span> {{ $media['Awards'] }}</li>@endif
-                    @if(!empty($media['DVD']))
-                        <li><span class="fiche-info-title">DVD release</span> {{ $media['DVD'] }}</li>@endif
-                    @if(!empty($media['BoxOffice']))
-                        <li><span class="fiche-info-title">Box Office</span> {{ $media['BoxOffice'] }} </li>@endif
                 </ul>
 
                 <ul class="list-unstyled fiche-ul">
@@ -79,6 +73,12 @@
                             <li><span class="fiche-info-title">Rated</span> {{ $media['Rated'] }} </li>@endif
                         @if(!empty($media['Released']))
                             <li><span class="fiche-info-title">Released</span> {{ $media['Released'] }} </li>@endif
+                        @if(!empty($media['Awards']))
+                            <li><span class="fiche-info-title">Awards</span> {{ $media['Awards'] }}</li>@endif
+                        @if(!empty($media['DVD']))
+                            <li><span class="fiche-info-title">DVD release</span> {{ $media['DVD'] }}</li>@endif
+                        @if(!empty($media['BoxOffice']))
+                            <li><span class="fiche-info-title">Box Office</span> {{ $media['BoxOffice'] }} </li>@endif
                 </ul>
 
             </div>

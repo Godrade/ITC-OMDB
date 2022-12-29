@@ -1,0 +1,51 @@
+@media (max-width: map-get($breakpoints, lg)) {
+    main {
+        .fiche-score-container {
+            position: relative;
+            height: auto;
+
+            .d-flex {
+                display: block !important;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($breakpoints, sm)) {
+    main {
+        .fiche-ul {
+            column-count: 1;
+        }
+
+        .fiche-picture-container {
+            height: auto;
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($breakpoints, lg)) {
+    main {
+        .fiche-score-container {
+            position: relative;
+            height: auto;
+
+            .d-flex {
+                display: block !important;
+            }
+        }
+
+        .fiche-picture-container {
+            height: auto;
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
