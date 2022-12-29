@@ -61,5 +61,41 @@ class PagesController extends Controller {
         }
     }
 
+    /**
+     * @param $omdbID
+     * @param $type
+     * @return array|mixed|string[]
+     */
+    private function getMediaByOmdbID($omdbID, $type) {
+        try {
+            $apiKey = ENV('OMDB_API_KEY');
+            return Http::accept('application/json')->get("http://www.omdbapi.com/?i=$omdbID&plot=full&apikey=$apiKey")->json();
+        } catch (\Exception $e) {
+            return array(
+                'Response' => 'False',
+                'Error' => $type . 'not found'
+            );
+        }
+    }
 
+    /**
+     * @param $type
+     * @param $imdbID
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function fiche($type, $omdbID) {
+        try {
+            $media = $this->getMediaByOmdbID($omdbID, $type);
+            $media['Genre'] = explode(',', $media['Genre']);
+            $media['Runtime'] = $media['Runtime'] != 'N/A' ? $this->formatRuntime(explode(' ', $media['Runtime'])[0]) : 'No duration available';
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+
+        return view('app.pages.media-fiche', compact('media'));
+    }
+
+    private function formatRuntime($runtime) {
+        return floor($runtime / 60) . 'h ' . ($runtime - floor($runtime / 60) * 60) . 'm';
+    }
 }

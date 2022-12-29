@@ -1,11 +1,8 @@
-$primary : #373737;
-$primary-hover : #2c6792;
+$primary : #3e3e3e;
+$secondary : #1D1D1D;
 
-$secondary : #049C99;
-$secondary-hover : #04bfbb;
-
-$background-color : #1D1D1D;
-$input-color : #373737;
+$background-color : $secondary;
+$input-color : $primary;
 
 /* BREAKPOINTS */
 $breakpoints: (

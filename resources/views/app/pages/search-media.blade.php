@@ -15,9 +15,9 @@
                 @else
                     <span class="text-white mb-2">Number of results : {{ $mediaListed['movie']['totalResults'] }}</span>
                     @foreach($mediaListed['movie']['Search'] as $movie)
-                        <div class="col-3 mb-3 position-relative">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 position-relative">
                             <a href="{{ route('app.fiche', ['type' => $movie['Type'], 'imdbID' => $movie['imdbID']]) }}"
-                               class="media-container rounded-3">
+                               class="media-container">
                                 <img
                                     src="{{ $movie['Poster'] != 'N/A' ? $movie['Poster'] : asset('assets/images/default-picture.jpg') }}"
                                     alt="{{ $movie['Title'] }}">
@@ -37,9 +37,9 @@
                     <span
                         class="text-white mb-2">Number of results : {{ $mediaListed['series']['totalResults'] }}</span>
                     @foreach($mediaListed['series']['Search'] as $serie)
-                        <div class="col-3 mb-3 position-relative">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 position-relative">
                             <a href="{{ route('app.fiche', ['type' => $serie['Type'], 'imdbID' => $serie['imdbID']]) }}"
-                               class="media-container rounded-3">
+                               class="media-container">
                                 <img
                                     src="{{ $serie['Poster'] != 'N/A' ? $serie['Poster'] : asset('assets/images/default-picture.jpg') }}"
                                     alt="{{ $serie['Title'] }}">
