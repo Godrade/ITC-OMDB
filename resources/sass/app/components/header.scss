@@ -17,12 +17,21 @@ body {
 
     .container {
         form {
-            width: 40%;
+            width: 50%;
 
             .form-control {
                 background-color: $input-color;
                 color: white;
                 border: none;
+            }
+
+            button {
+                background-color: $input-color;
+                border: none;
+
+                &:focus {
+                    box-shadow: none;
+                }
             }
         }
     }

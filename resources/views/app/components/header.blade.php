@@ -1,15 +1,14 @@
 <nav class="navbar navbar-light bg-dark">
-    <div class="container">
+    <div class="container header-container">
         <a href="{{ route('app.index') }}" class="navbar-brand">{{ ENV('APP_NAME') }}</a>
-        <form class="d-flex position-relative" id="search-media">
+        <form class="d-flex" id="search-media">
             @csrf
-            <input class="form-control me-2" type="search" name="form_name" id="form_name"
-                   placeholder="Search for a movie/series"
-                   aria-label="Search" autocomplete="off">
-            <input type="hidden" name="form_page" id="form_page" value="1">
-            <button class="btn position-absolute end-0 me-2" type="submit">
-                <i class="fi fi-rr-search text-white"></i>
-            </button>
+            <div class="input-group">
+                <input type="hidden" name="form_page" id="form_page" value="1">
+                <input class="form-control rounded-start" type="search" name="form_name" id="form_name"
+                       placeholder="Search for a movie/series" aria-label="Search" autocomplete="off" aria-describedby="search-button">
+                <button class="btn btn-outline-secondary" type="submit" id="search-button"><i class="fi fi-rr-search text-white"></i></button>
+            </div>
         </form>
     </div>
 </nav>

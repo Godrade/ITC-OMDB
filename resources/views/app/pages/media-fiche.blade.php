@@ -16,8 +16,8 @@
                     <span
                         class="badge rounded-pill bg-secondary position-absolute top-0 start-0 mt-2 ms-4">{{ $media['Type'] }}</span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 mt-md-3 position-relative">
-                    <h1 class="h2 text-bold text-white">{{ $media['Title'] }}</h1>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 fiche-title position-relative">
+                    <h1 class="h2 text-bold">{{ $media['Title'] }}</h1>
                     <span>{{ $media['Year'] }} - {{ $media['Runtime'] }}</span>
 
                     <div class="mt-2">
