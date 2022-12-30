@@ -46,6 +46,7 @@ class PagesController extends Controller {
                 'previousIndex' => $pageID - 1 == 0 ? 1 : $pageID - 1,
                 'index' => $pageID,
                 'nextIndex' => $pageID < $paginationIndexMax ? $pageID + 1 : 1,
+                'maxIndex' => $paginationIndexMax,
                 'mediaData' => $urlData
             );
 

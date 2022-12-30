@@ -55,10 +55,13 @@
                 <div class="col-12">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
-                            <li class="page-item {{ $pagination['previousIndex'] == 1 ? 'disabled': ''  }}">
+                            <li class="page-item {{ $pagination['index'] == 1 ? 'disabled': ''  }}">
                                 <a class="page-link" href="{{ route('app.search', ['omdbName' => $pagination['mediaData']['omdbName'], 'pageID' => $pagination['previousIndex']]) }}" tabindex="-1" aria-disabled="false">Previous</a>
                             </li>
+                            <li class="page-item"><a class="page-link" href="{{ route('app.search', ['omdbName' => $pagination['mediaData']['omdbName'], 'pageID' => 1]) }}">1</a></li>
                             <li class="page-item"><a class="page-link disabled" href="#">{{ $pagination['index'] }}</a></li>
+                            <li class="page-item"><a class="page-link" href="{{ route('app.search', ['omdbName' => $pagination['mediaData']['omdbName'], 'pageID' => $pagination['maxIndex']]) }}">{{ $pagination['maxIndex'] }}</a></li>
+
                             <li class="page-item {{ $pagination['nextIndex'] == 1 ? 'disabled': ''  }}">
                                 <a class="page-link" href="{{ route('app.search', ['omdbName' => $pagination['mediaData']['omdbName'], 'pageID' => $pagination['nextIndex']]) }}">Next</a>
                             </li>

@@ -9,6 +9,24 @@ main {
         }
     }
 
+    .pagination {
+        .disabled {
+            .page-link {
+                color: #7f7f7f !important;
+            }
+        }
+
+        .page-link {
+            background-color: $primary;
+            border: $primary;
+            color: white;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
     .media-title {
         font-size: 14px;
     }
