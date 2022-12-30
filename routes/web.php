@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['ForceSSL']], function () {
+    Route::get('/', [PagesController::class, 'index'])->name('app.index');
+
+    Route::get('/search/{omdbName}/page/{pageID}', [PagesController::class, 'search'])->name('app.search');
+
+    Route::get('/{type}/{omdbID}', [PagesController::class, 'fiche'])->name('app.fiche');
+
 });

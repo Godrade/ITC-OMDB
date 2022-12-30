@@ -1,0 +1,38 @@
+body {
+    background-color: $background-color;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.bg-dark {
+    background-color: $background-color !important;
+}
+
+.navbar {
+    .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .container {
+        form {
+            width: 50%;
+
+            .form-control {
+                background-color: $input-color;
+                color: white;
+                border: none;
+            }
+
+            button {
+                background-color: $input-color;
+                border: none;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

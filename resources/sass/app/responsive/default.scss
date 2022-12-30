@@ -1,0 +1,69 @@
+@media (max-width: map-get($breakpoints, lg)) {
+    main {
+
+        .illustration-container {
+            text-align: center;
+        }
+
+        .fiche-score-container {
+            position: relative;
+            height: auto;
+
+            .d-flex {
+                display: block !important;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($breakpoints, sm)) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .navbar .container form {
+        width: 90%;
+    }
+
+    main {
+        .fiche-ul {
+            column-count: 1;
+        }
+
+        .fiche-picture-container {
+            height: auto;
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: map-get($breakpoints, lg)) {
+    main {
+        .fiche-score-container {
+            position: relative;
+            height: auto;
+
+            .d-flex {
+                display: block !important;
+            }
+        }
+
+        .fiche-picture-container {
+            height: auto;
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        .fiche-title {
+            margin-top: 10px;
+        }
+    }
+}
