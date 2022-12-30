@@ -10,29 +10,29 @@
 <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="{{ ENV('APP_NAME') }}">
     <meta itemprop="description"
-          content="Mon Commerçant Corse, est une plateforme de référencement de nos Commerçants/Artisans/Producteurs de Corse.">
-    <meta itemprop="image" content="">
+          content="ITC-OMDB is the most popular and authoritative source for movie. Find ratings and reviews for the newest movie.">
+    <meta itemprop="image" content="{{ asset('assets/images/icon/star.svg') }}">
     <meta name="keywords"
-          content="corse, commerçant, commerçant corse, commerce, proximités, proximité, publicité, services, valorisation, savoir-faire corse, artisanat, commerçant artisan, petit commerçant à proximité">
+          content="omdb, movie, series, tv, omdbapi">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:local" name="og:local" content="français">
+    <meta property="og:local" name="og:local" content="anglais">
     <meta property="og:title" content="{{ ENV('APP_NAME') }}">
-    <meta name="og:site_name" property="og:site_name" content="Mon Commerçant Corse">
+    <meta name="og:site_name" property="og:site_name" content="{{ ENV('APP_NAME') }}">
     <meta property="og:description"
-          content="Mon Commerçant Corse, est une plateforme de référencement de nos Commerçants/Artisans/Producteurs de Corse.">
-    <meta property="og:image" content="">
+          content="ITC-OMDB is the most popular and authoritative source for movie. Find ratings and reviews for the newest movie.">
+    <meta property="og:image" content="{{ asset('assets/images/icon/star.svg') }}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ ENV('APP_NAME') }}">
     <meta name="twitter:description"
-          content="Mon Commerçant Corse, est une plateforme de référencement de nos Commerçants/Artisans/Producteurs de Corse.">
-    <meta name="twitter:image" content="">
+          content="ITC-OMDB is the most popular and authoritative source for movie. Find ratings and reviews for the newest movie.">
+    <meta name="twitter:image" content="{{ asset('assets/images/icon/star.svg') }}">
 
 
-    <link rel="icon" type="image/png" href=""/>
+    <link rel="icon" type="image/svg" href="{{ asset('assets/images/icon/star.svg') }}"/>
 
     <!-- Styles -->
     <!-- CSS only -->
