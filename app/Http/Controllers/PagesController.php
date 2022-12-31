@@ -25,7 +25,7 @@ class PagesController extends Controller {
 
         Validator::make($urlData, [
             'omdbName' => 'required|string',
-            'pageID' => 'required|numeric|min:0|max:100',
+            'pageID' => 'required|numeric|min:1|max:8000',
         ])->validated();
 
         try {
@@ -46,7 +46,7 @@ class PagesController extends Controller {
                 'previousIndex' => $pageID - 1 == 0 ? 1 : $pageID - 1,
                 'index' => $pageID,
                 'nextIndex' => $pageID < $paginationIndexMax ? $pageID + 1 : 1,
-                'maxIndex' => $paginationIndexMax,
+                'maxIndex' => $paginationIndexMax == 0 ? 1 : $paginationIndexMax,
                 'mediaData' => $urlData
             );
 
